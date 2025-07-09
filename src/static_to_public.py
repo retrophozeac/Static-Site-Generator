@@ -4,10 +4,10 @@ import shutil
 def static_to_public():
     if not os.path.exists("static"):
         raise Exception("Static folder not found")
-    if os.path.exists("public"):
-        shutil.rmtree("public")
-    os.mkdir("public")
-    recursive_copy("static","public")
+    if os.path.exists("docs"):
+        shutil.rmtree("docs")
+    os.mkdir("docs")
+    recursive_copy("static","docs")
 
 
 def recursive_copy(src_dir, dest_dir):
